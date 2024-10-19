@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 500px;
+    max-height: 800px;
+    background-color: #87CEEB;
+    overflow: hidden;
+}
+
+#bird {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    /* background-color: yellow; */
+    /* border-radius: 50%; */
+    
+}
+#bird img{
+    height: 61px;
+    width: 108px;
+    /* object-fit: cover; */
+}
+
+.pipe {
+    position: absolute;
+    width: 60px;
+    height: 100%; /* Ensure the pipe covers the full height */
+    background-image: url(2024101821054877.png);
+    background-size: cover; /* This will cover the entire area */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* For the top pipe, we need to flip the image vertically */
+.pipe.top {
+    transform: scaleY(-1);
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    z-index: 999;
+}
+
+#start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+@media (max-aspect-ratio: 1/1) and (max-width: 500px) {
+    #game-container {
+        width: 100vw;
+        height: calc(100vw * 1.6);
+        max-height: 100vh;
+    }
+}
